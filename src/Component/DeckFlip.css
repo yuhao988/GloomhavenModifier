@@ -1,0 +1,32 @@
+.page-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.page-header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;       /* replaces the margin-right on the image */
+  margin: 0;
+}
+
+.page-body{
+  background-color: #e5e4e4;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 0, 0);
+}
+
+.class-image{
+  width:40px;
+  margin-right: 10px;
+}
