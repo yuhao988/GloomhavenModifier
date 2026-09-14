@@ -1,0 +1,74 @@
+[
+  {
+    "ID": 0,
+    "Name": "Base0",
+    "Class": "Base",
+    "Value": 0,
+    "Roll": false,
+    "Effect": null
+  },
+  {
+    "ID": 1,
+    "Name": "Base2x",
+    "Class": "Base",
+    "Value": 99,
+    "Roll": false,
+    "Effect": "Attack power X2"
+  },
+  {
+    "ID": 2,
+    "Name": "BaseNull",
+    "Class": "Base",
+    "Value": -99,
+    "Roll": false,
+    "Effect": "Attack power becomes 0"
+  },
+  {
+    "ID": 3,
+    "Name": "BaseP1",
+    "Class": "Base",
+    "Value": 1,
+    "Roll": false,
+    "Effect": null
+  },
+  {
+    "ID": 4,
+    "Name": "BaseP2",
+    "Class": "Base",
+    "Value": 2,
+    "Roll": false,
+    "Effect": null
+  },
+  {
+    "ID": 5,
+    "Name": "BaseM1",
+    "Class": "Base",
+    "Value": -1,
+    "Roll": false,
+    "Effect": null
+  },
+  {
+    "ID": 6,
+    "Name": "BaseM2",
+    "Class": "Base",
+    "Value": -2,
+    "Roll": false,
+    "Effect": null
+  },
+  {
+    "ID": 7,
+    "Name": "BruteP3",
+    "Class": "Brute",
+    "Value": 3,
+    "Roll": false,
+    "Effect": null
+  },
+  {
+    "ID": 8,
+    "Name": "BruteRoAdTar",
+    "Class": "Brute",
+    "Value": 0,
+    "Roll": true,
+    "Effect": "Add attack Target"
+  }
+]
