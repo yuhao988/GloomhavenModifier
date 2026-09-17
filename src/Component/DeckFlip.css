@@ -40,10 +40,27 @@
 
 .card-back {
   cursor: pointer;
+  border-radius: 6px;
 }
 
 .draw-btn {
   padding: 8px 16px;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.drawn-cards {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.drawn-card {
+  border: 6px solid transparent;   /* keeps layout stable */
+  border-radius: 12px;
+}
+
+.drawn-card.chosen {
+  border-color: gold;
 }

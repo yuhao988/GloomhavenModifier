@@ -54,7 +54,7 @@ function Home() {
         className="class-box"
         onClick={() => setSelClass(classNm)}
         style={{
-          outline: selClass === classNm ? "3px solid gold" : "none",
+          outline: selClass === classNm ? "5px solid gold" : "none",
         }}
       >
         <img src={images[classNm]} alt={classNm} className="class-image" />
