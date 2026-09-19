@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: top;
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
 }
@@ -41,26 +41,73 @@
 .card-back {
   cursor: pointer;
   border-radius: 6px;
+  width: 10vw;
 }
 
 .draw-btn {
   padding: 8px 16px;
   font-size: 1rem;
   cursor: pointer;
+  width: 10vw;
 }
 
 .drawn-cards {
   display: flex;
-  gap: 12px;
+  gap: 3px;
   justify-content: center;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .drawn-card {
   border: 6px solid transparent;   /* keeps layout stable */
   border-radius: 12px;
+  width:9vw;
+  
 }
 
 .drawn-card.chosen {
   border-color: gold;
+   
+}
+
+.body-column {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.body-column1 {
+  width: 30vw;
+}
+
+.body-column2 {
+  width: 50vw;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.body-column3 {
+  width: 20vw;
+}
+
+.my-table {
+  border-collapse: collapse;
+  margin: 0 auto;              /* centers the table block in its parent */
+  table-layout: fixed;         /* makes column widths authoritative */
+}
+
+.my-table td {
+  width: auto;
+  border: 2px solid #555;
+  text-align: center;          /* centers inline content horizontally */
+  vertical-align: middle;      /* centers content vertically */
+  padding: 4px;
+}
+
+.my-table td:first-child {
+  width: 11vw;
+}
+
+.my-table td:last-child {
+  width: 5vw;
 }

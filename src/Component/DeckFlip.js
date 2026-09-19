@@ -48,14 +48,29 @@ function DeckFlip() {
   const { name } = useParams();
   const key = (name || "").replace(/\s+/g, ""); // sanitize the same way
   const [decklist, setDecklist] = useState(buildBaseDeck);
+  const [modDeck, setModDeck] = useState(buildBaseDeck);
   const [drawnCards, setDrawnCards] = useState([]);
   const [chosenIndex, setChosenIndex] = useState(null);
   const [discardPile, setDiscardPile] = useState([]);
   const [rollStack, setRollStack] = useState([]);
   const [showRoll, setShowRoll] = useState(true);
 
+  const countModDeck = () => {
+    // Tally IDs
+    const counts = modDeck.reduce((acc, card) => {
+      acc[card.ID] = (acc[card.ID] || 0) + 1;
+      return acc;
+    }, {});
+
+    // Convert to array of { card, count }
+    return Object.entries(counts).map(([id, count]) => ({
+      card: cardsById[id],
+      count,
+    }));
+  };
+
   const resetDeck0 = () => {
-    setDecklist(buildBaseDeck());
+    setDecklist(modDeck);
     setDiscardPile([]);
     setDrawnCards([]);
     setRollStack([]);
@@ -160,7 +175,7 @@ function DeckFlip() {
       deck = result.deck;
       discard = result.discard;
     }
-    console.log(rolls);
+    //console.log(rolls);
 
     const first = cards[0]; // Regard only the last non-rolling card as the first card
 
@@ -207,59 +222,88 @@ function DeckFlip() {
         </h1>
       </header>
       <div className="page-body">
-        <div>
-          <button onClick={resetDeck0}>Reset</button>
-          <br />
-          <div className="draw-area">
-            <button className="draw-btn" onClick={handleAdvantage}>
-              Advantage
-            </button>
-
-            <img
-              src={cardBack}
-              alt="deck"
-              onClick={drawCard}
-              className="card-back"
-            />
-
-            <button className="draw-btn" onClick={handleDisadvantage}>
-              Disadvantage
-            </button>
+        <div className="body-column">
+          <div className="body-column1">
+            <h4>Perks count:</h4>
           </div>
-          <br />
-          {drawnCards.length > 0 && (
-            <div className="drawn-cards">
-              {rollStack.length > 0 && showRoll && (
-                <div>
-                  {rollStack.map((card, i) => (
-                    <img
-                      key={i}
-                      src={cardImages[getImageKey(card)]}
-                      alt={card.Name}
-                      className={
-                        chosenIndex !== null
-                          ? "drawn-card chosen"
-                          : "drawn-card"
-                      }
-                    />
-                  ))}
-                </div>
-              )}
-              {drawnCards.map((card, i) => (
-                <img
-                  key={i}
-                  src={cardImages[getImageKey(card)]}
-                  alt={card.Name}
-                  className={
-                    chosenIndex !== null && i === chosenIndex
-                      ? "drawn-card chosen"
-                      : "drawn-card"
-                  }
-                />
-              ))}
+          <div className="body-column2">
+            <h3>Roll Simulation</h3>
+            <button onClick={resetDeck0} style={{ width: "10vw" }}>
+              Reset Deck
+            </button>
+            <br />
+            <div className="draw-area">
+              <button className="draw-btn" onClick={handleAdvantage}>
+                Advantage
+              </button>
+
+              <img
+                src={cardBack}
+                alt="deck"
+                onClick={drawCard}
+                className="card-back"
+              />
+
+              <button className="draw-btn" onClick={handleDisadvantage}>
+                Disadvantage
+              </button>
             </div>
-          )}
-          <p>Cards remaining: {decklist.length}</p>
+            <br />
+            {drawnCards.length > 0 && (
+              <div className="drawn-cards">
+                {rollStack.length > 0 && showRoll && (
+                  <div>
+                    {rollStack.map((card, i) => (
+                      <img
+                        key={i}
+                        src={cardImages[getImageKey(card)]}
+                        alt={card.Name}
+                        className={
+                          chosenIndex !== null
+                            ? "drawn-card chosen"
+                            : "drawn-card"
+                        }
+                      />
+                    ))}
+                  </div>
+                )}
+                {drawnCards.map((card, i) => (
+                  <img
+                    key={i}
+                    src={cardImages[getImageKey(card)]}
+                    alt={card.Name}
+                    className={
+                      chosenIndex !== null && i === chosenIndex
+                        ? "drawn-card chosen"
+                        : "drawn-card"
+                    }
+                    style={{ marginRight: "20px" }}
+                  />
+                ))}
+              </div>
+            )}
+            <p>Cards remaining: {decklist.length}</p>
+          </div>
+          <div className="body-column3">
+            <h3>Deck Composition</h3>
+            <table className="my-table">
+              <thead></thead>
+              <tbody>
+                {countModDeck().map((row, i) => (
+                  <tr key={i}>
+                    <td>
+                      <img
+                        src={cardImages[getImageKey(row.card)]}
+                        alt={row.card.Name}
+                        style={{width:"8vw",margin:"2px"}}
+                      />
+                    </td>
+                    <td>{row.count}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
         <Link to={`${process.env.PUBLIC_URL}/`} className="home-link">
           Back
