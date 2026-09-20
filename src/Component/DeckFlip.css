@@ -110,4 +110,29 @@
 
 .my-table td:last-child {
   width: 5vw;
+  font-size: large;
+}
+
+.perk-table {
+  border-collapse: collapse;
+  margin: 0 auto;              /* centers the table block in its parent */
+  table-layout: fixed;         /* makes column widths authoritative */
+}
+
+.perk-table td {
+  width: auto;
+  border: 2px solid #555;
+  text-align: left;          /* centers inline content horizontally */
+        
+  
+}
+
+.perk-table td:first-child {
+  width: 4vw;
+}
+
+.perk-table td:last-child {
+  width: 22vw;
+  font-size: medium;
+  padding-left: 10px;
 }

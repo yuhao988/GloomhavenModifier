@@ -4,6 +4,7 @@
     "Name": "Base0",
     "Class": "Base",
     "Value": 0,
+    "Pierce": 0,
     "Roll": false,
     "Effect": null
   },
@@ -12,6 +13,7 @@
     "Name": "Base2x",
     "Class": "Base",
     "Value": 99,
+    "Pierce": 0,
     "Roll": false,
     "Effect": "Attack power X2"
   },
@@ -20,6 +22,7 @@
     "Name": "BaseNull",
     "Class": "Base",
     "Value": -99,
+    "Pierce": 0,
     "Roll": false,
     "Effect": "Attack power becomes 0"
   },
@@ -28,6 +31,7 @@
     "Name": "BaseP1",
     "Class": "Base",
     "Value": 1,
+    "Pierce": 0,
     "Roll": false,
     "Effect": null
   },
@@ -36,6 +40,7 @@
     "Name": "BaseP2",
     "Class": "Base",
     "Value": 2,
+    "Pierce": 0,
     "Roll": false,
     "Effect": null
   },
@@ -44,6 +49,7 @@
     "Name": "BaseM1",
     "Class": "Base",
     "Value": -1,
+    "Pierce": 0,
     "Roll": false,
     "Effect": null
   },
@@ -52,6 +58,7 @@
     "Name": "BaseM2",
     "Class": "Base",
     "Value": -2,
+    "Pierce": 0,
     "Roll": false,
     "Effect": null
   },
@@ -60,6 +67,7 @@
     "Name": "BruteP3",
     "Class": "Brute",
     "Value": 3,
+    "Pierce": 0,
     "Roll": false,
     "Effect": null
   },
@@ -68,7 +76,62 @@
     "Name": "BruteRoAdTar",
     "Class": "Brute",
     "Value": 0,
+    "Pierce": 0,
     "Roll": true,
     "Effect": "Add attack Target"
+  },
+  {
+    "ID": 9,
+    "Name": "BruteRoDis",
+    "Class": "Brute",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Disarm"
+  },
+  {
+    "ID": 10,
+    "Name": "BruteRoMud",
+    "Class": "Brute",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Muddle"
+  },
+  {
+    "ID": 11,
+    "Name": "BruteRoPie3",
+    "Class": "Brute",
+    "Value": 0,
+    "Pierce": 3,
+    "Roll": true,
+    "Effect": "Pierce 3"
+  },
+  {
+    "ID": 12,
+    "Name": "BruteRoPus1",
+    "Class": "Brute",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Push 1"
+  },
+  {
+    "ID": 13,
+    "Name": "BruteRoStu",
+    "Class": "Brute",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Stun"
+  },
+  {
+    "ID": 14,
+    "Name": "BruteShd1Se",
+    "Class": "Brute",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Shield 1, Self"
   }
 ]
