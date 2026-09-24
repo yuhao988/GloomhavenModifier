@@ -105,7 +105,7 @@
     "Value": 0,
     "Pierce": 3,
     "Roll": true,
-    "Effect": "Pierce 3"
+    "Effect": null
   },
   {
     "ID": 12,
@@ -133,5 +133,68 @@
     "Pierce": 0,
     "Roll": false,
     "Effect": "Shield 1, Self"
+  },
+  {
+    "ID": 15,
+    "Name": "TinkerAdTar",
+    "Class": "Tinkerer",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Add attack Target"
+  },
+  {
+    "ID": 16,
+    "Name": "TinkerP1Hea2Se",
+    "Class": "Tinkerer",
+    "Value": 1,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Heal 2, Self"
+  },
+  {
+    "ID": 17,
+    "Name": "TinkerP1Imo",
+    "Class": "Tinkerer",
+    "Value": 1,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Immobilise"
+  },
+  {
+    "ID": 18,
+    "Name": "TinkerP1Wou",
+    "Class": "Tinkerer",
+    "Value": 1,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Wound"
+  },
+  {
+    "ID": 19,
+    "Name": "TinkerP3",
+    "Class": "Tinkerer",
+    "Value": 3,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": null
+  },
+  {
+    "ID": 20,
+    "Name": "TinkerRoFir",
+    "Class": "Tinkerer",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Generate Fire"
+  },
+  {
+    "ID":21,
+    "Name": "TinkerRoMud",
+    "Class": "Tinkerer",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Muddle"
   }
 ]

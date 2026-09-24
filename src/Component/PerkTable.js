@@ -1,5 +1,5 @@
 import cardData from "./CardList.json";
-import "./DeckFlip.css" ;
+import "./DeckFlip.css";
 
 const cardsById = cardData.reduce((acc, card) => {
   acc[card.ID] = card;
@@ -46,7 +46,7 @@ export const PERKS_BY_CLASS = {
     {
       label: "Add 2 {+1} cards",
       ops: [{ add: 3, times: 2 }],
-      boxes: [{ id: "brute-2-a" },{ id: "brute-2-b" }],
+      boxes: [{ id: "brute-2-a" }, { id: "brute-2-b" }],
     },
     {
       label: "Add 1 {+3} card",
@@ -56,7 +56,7 @@ export const PERKS_BY_CLASS = {
     {
       label: "Add 3 {Rolling Push1} cards",
       ops: [{ add: 12, times: 3 }],
-      boxes: [{ id: "brute-4-a" },{ id: "brute-4-b" }],
+      boxes: [{ id: "brute-4-a" }, { id: "brute-4-b" }],
     },
     {
       label: "Add 2 {Rolling Pierce3} cards",
@@ -66,17 +66,20 @@ export const PERKS_BY_CLASS = {
     {
       label: "Add 2 {Rolling Stun} cards",
       ops: [{ add: 13, times: 2 }],
-      boxes: [{ id: "brute-6-a" },{ id: "brute-6-b" }],
+      boxes: [{ id: "brute-6-a" }, { id: "brute-6-b" }],
     },
     {
       label: "Add 1 {Rolling Disarm} and 1 {Rolling Muddle} cards",
-      ops: [{ add: 9, times: 1 },{ add: 10, times: 1 }],
+      ops: [
+        { add: 9, times: 1 },
+        { add: 10, times: 1 },
+      ],
       boxes: [{ id: "brute-7-a" }],
     },
     {
       label: "Add 1  {Rolling Add Target} card",
       ops: [{ add: 8, times: 1 }],
-      boxes: [{ id: "brute-8-a" },{ id: "brute-8-b" }],
+      boxes: [{ id: "brute-8-a" }, { id: "brute-8-b" }],
     },
     {
       label: "Add 1 {Shield 1 Self} card",
@@ -93,7 +96,7 @@ export const PERKS_BY_CLASS = {
     {
       label: "Remove 2 {-1} cards",
       ops: [{ remove: 5, times: 2 }],
-      boxes: [{ id: "tink-0-a" },{ id: "tink-0-b" }],
+      boxes: [{ id: "tink-0-a" }, { id: "tink-0-b" }],
     },
 
     {
@@ -105,10 +108,301 @@ export const PERKS_BY_CLASS = {
       boxes: [{ id: "tink-1-a" }],
     },
     {
+      label: "Add 2 {+1} cards",
+      ops: [{ add: 3, times: 2 }],
+      boxes: [{ id: "tink-2-a" }],
+    },
+    {
+      label: "Add 1 {+3} card",
+      ops: [{ add: 19, times: 1 }],
+      boxes: [{ id: "tink-3-a" }],
+    },
+    {
+      label: "Add 2 {Rolling Fire} cards",
+      ops: [{ add: 20, times: 2 }],
+      boxes: [{ id: "tink-4-a" }],
+    },
+    {
+      label: "Add 3 {Rolling Muddle} cards",
+      ops: [{ add: 21, times: 3 }],
+      boxes: [{ id: "tink-5-a" }],
+    },
+    {
+      label: "Add 1 {+1 Wound} card",
+      ops: [{ add: 18, times: 1 }],
+      boxes: [{ id: "tink-6-a" }, { id: "tink-6-b" }],
+    },
+    {
+      label: "Add 1 {+1 Immobolise} card",
+      ops: [{ add: 17, times: 1 }],
+      boxes: [{ id: "tink-7-a" }, { id: "tink-7-b" }],
+    },
+    {
+      label: "Add 1 {+1 Heal 2, Self} card",
+      ops: [{ add: 16, times: 1 }],
+      boxes: [{ id: "tink-8-a" }, { id: "tink-8-b" }],
+    },
+    {
+      label: "Add 1 {+0 Add Target} card",
+      ops: [{ add: 15, times: 1 }],
+      boxes: [{ id: "tink-9-a" }],
+    },
+    {
       label: "Ignore negative scenario effects (No effect on deck)",
       ops: [],
       boxes: [{ id: "tink-10-a" }],
-    },]
+    },
+  ],
+  Scoundrel: [
+    {
+      label: "Remove 2 {-1} cards",
+      ops: [{ remove: 5, times: 2 }],
+      boxes: [{ id: "scound-0-a" }, { id: "scound-0-b" }],
+    },
+
+    {
+      label: "Remove 4 {+0} cards",
+      ops: [{ remove: 0, times: 4 }],
+      boxes: [{ id: "scound-1-a" }],
+    },
+    {
+      label: "Replace 1 {-2} card with 1 {+0} card",
+      ops: [
+        { add: 0, times: 1 },
+        { remove: 6, times: 1 },
+      ],
+      boxes: [{ id: "scound-2-a" }],
+    },
+    {
+      label: "Replace 1 {-1} card with 1 {+1} card",
+      ops: [
+        { add: 3, times: 1 },
+        { remove: 5, times: 1 },
+      ],
+      boxes: [{ id: "scound-3-a" }],
+    },
+    {
+      label: "Replace 1 {+0} card with 1 {+2} card",
+      ops: [
+        { add: 4, times: 1 },
+        { remove: 0, times: 1 },
+      ],
+      boxes: [{ id: "scound-4-a" }, { id: "scound-4-b" }],
+    },
+    {
+      label: "Add 2 {Rolling +1} cards",
+      ops: [{ add: 999, times: 2 }],
+      boxes: [{ id: "scound-5-a" }, { id: "scound-5-b" }],
+    },
+    {
+      label: "Add 2 {Rolling Pierce 3} cards",
+      ops: [{ add: 999, times: 2 }],
+      boxes: [{ id: "scound-6-a" }],
+    },
+    {
+      label: "Add 2 {Rolling Poison} cards",
+      ops: [{ add: 999, times: 2 }],
+      boxes: [{ id: "scound-7-a" }, { id: "scound-7-b" }],
+    },
+    {
+      label: "Add 2 {Rolling Muddle} cards",
+      ops: [{ add: 999, times: 2 }],
+      boxes: [{ id: "scound-8-a" }],
+    },
+    {
+      label: "Add 1 {Rolling Invisible} card",
+      ops: [{ add: 999, times: 1 }],
+      boxes: [{ id: "scound-9-a" }],
+    },
+    {
+      label: "Ignore negative scenario effects (No effect on deck)",
+      ops: [],
+      boxes: [{ id: "scound-10-a" }],
+    },
+  ],
+  Spellweaver: [
+    {
+      label: "Remove 2 {-1} cards",
+      ops: [{ remove: 5, times: 2 }],
+      boxes: [{ id: "spell-0-a" }, { id: "spell-0-b" }],
+    },
+
+    {
+      label: "Replace 1 {-2} card with 1 {+0} card",
+      ops: [
+        { add: 0, times: 1 },
+        { remove: 6, times: 1 },
+      ],
+      boxes: [{ id: "spell-1-a" }],
+    },
+    {
+      label: "Add 2 {+1} cards",
+      ops: [{ add: 3, times: 2 }],
+      boxes: [{ id: "spell-2-a" }],
+    },
+    {
+      label: "Add 1 {+3} card",
+      ops: [{ add: 19, times: 1 }],
+      boxes: [{ id: "spell-3-a" }],
+    },
+    {
+      label: "Add 2 {Rolling Fire} cards",
+      ops: [{ add: 20, times: 2 }],
+      boxes: [{ id: "spell-4-a" }],
+    },
+    {
+      label: "Add 3 {Rolling Muddle} cards",
+      ops: [{ add: 21, times: 3 }],
+      boxes: [{ id: "spell-5-a" }],
+    },
+    {
+      label: "Add 1 {+1 Wound} card",
+      ops: [{ add: 18, times: 1 }],
+      boxes: [{ id: "spell-6-a" }, { id: "spell-6-b" }],
+    },
+    {
+      label: "Add 1 {+1 Immobolise} card",
+      ops: [{ add: 17, times: 1 }],
+      boxes: [{ id: "spell-7-a" }, { id: "spell-7-b" }],
+    },
+    {
+      label: "Add 1 {+1 Heal 2, Self} card",
+      ops: [{ add: 16, times: 1 }],
+      boxes: [{ id: "spell-8-a" }, { id: "spell-8-b" }],
+    },
+    {
+      label: "Add 1 {+0 Add Target} card",
+      ops: [{ add: 15, times: 1 }],
+      boxes: [{ id: "spell-9-a" }],
+    },
+    {
+      label: "Ignore negative scenario effects (No effect on deck)",
+      ops: [],
+      boxes: [{ id: "spell-10-a" }],
+    },
+  ],
+  Cragheart: [
+    {
+      label: "Remove 2 {-1} cards",
+      ops: [{ remove: 5, times: 2 }],
+      boxes: [{ id: "crag-0-a" }, { id: "crag-0-b" }],
+    },
+
+    {
+      label: "Replace 1 {-2} card with 1 {+0} card",
+      ops: [
+        { add: 0, times: 1 },
+        { remove: 6, times: 1 },
+      ],
+      boxes: [{ id: "crag-1-a" }],
+    },
+    {
+      label: "Add 2 {+1} cards",
+      ops: [{ add: 3, times: 2 }],
+      boxes: [{ id: "crag-2-a" }],
+    },
+    {
+      label: "Add 1 {+3} card",
+      ops: [{ add: 19, times: 1 }],
+      boxes: [{ id: "crag-3-a" }],
+    },
+    {
+      label: "Add 2 {Rolling Fire} cards",
+      ops: [{ add: 20, times: 2 }],
+      boxes: [{ id: "crag-4-a" }],
+    },
+    {
+      label: "Add 3 {Rolling Muddle} cards",
+      ops: [{ add: 21, times: 3 }],
+      boxes: [{ id: "crag-5-a" }],
+    },
+    {
+      label: "Add 1 {+1 Wound} card",
+      ops: [{ add: 18, times: 1 }],
+      boxes: [{ id: "crag-6-a" }, { id: "crag-6-b" }],
+    },
+    {
+      label: "Add 1 {+1 Immobolise} card",
+      ops: [{ add: 17, times: 1 }],
+      boxes: [{ id: "crag-7-a" }, { id: "crag-7-b" }],
+    },
+    {
+      label: "Add 1 {+1 Heal 2, Self} card",
+      ops: [{ add: 16, times: 1 }],
+      boxes: [{ id: "crag-8-a" }, { id: "crag-8-b" }],
+    },
+    {
+      label: "Add 1 {+0 Add Target} card",
+      ops: [{ add: 15, times: 1 }],
+      boxes: [{ id: "crag-9-a" }],
+    },
+    {
+      label: "Ignore negative scenario effects (No effect on deck)",
+      ops: [],
+      boxes: [{ id: "crag-10-a" }],
+    },
+  ],
+  Mindthief: [
+    {
+      label: "Remove 2 {-1} cards",
+      ops: [{ remove: 5, times: 2 }],
+      boxes: [{ id: "mind-0-a" }, { id: "mind-0-b" }],
+    },
+
+    {
+      label: "Replace 1 {-2} card with 1 {+0} card",
+      ops: [
+        { add: 0, times: 1 },
+        { remove: 6, times: 1 },
+      ],
+      boxes: [{ id: "mind-1-a" }],
+    },
+    {
+      label: "Add 2 {+1} cards",
+      ops: [{ add: 3, times: 2 }],
+      boxes: [{ id: "mind-2-a" }],
+    },
+    {
+      label: "Add 1 {+3} card",
+      ops: [{ add: 19, times: 1 }],
+      boxes: [{ id: "mind-3-a" }],
+    },
+    {
+      label: "Add 2 {Rolling Fire} cards",
+      ops: [{ add: 20, times: 2 }],
+      boxes: [{ id: "mind-4-a" }],
+    },
+    {
+      label: "Add 3 {Rolling Muddle} cards",
+      ops: [{ add: 21, times: 3 }],
+      boxes: [{ id: "mind-5-a" }],
+    },
+    {
+      label: "Add 1 {+1 Wound} card",
+      ops: [{ add: 18, times: 1 }],
+      boxes: [{ id: "mind-6-a" }, { id: "mind-6-b" }],
+    },
+    {
+      label: "Add 1 {+1 Immobolise} card",
+      ops: [{ add: 17, times: 1 }],
+      boxes: [{ id: "mind-7-a" }, { id: "mind-7-b" }],
+    },
+    {
+      label: "Add 1 {+1 Heal 2, Self} card",
+      ops: [{ add: 16, times: 1 }],
+      boxes: [{ id: "mind-8-a" }, { id: "mind-8-b" }],
+    },
+    {
+      label: "Add 1 {+0 Add Target} card",
+      ops: [{ add: 15, times: 1 }],
+      boxes: [{ id: "mind-9-a" }],
+    },
+    {
+      label: "Ignore negative scenario effects (No effect on deck)",
+      ops: [],
+      boxes: [{ id: "mind-10-a" }],
+    },
+  ],
 };
 
 // Apply all checked boxes' effects to a deck

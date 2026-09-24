@@ -40,8 +40,24 @@ function DeckFlip() {
   const [rollStack, setRollStack] = useState([]);
   const [showRoll, setShowRoll] = useState(true);
 
+  // Scene mods: [blessCount, curseCount, minus1Count]
+  const [sceneMod, setSceneMod] = useState([0, 0, 0]);
+
+  // Build the full deck: base + perks + scene mods.
+  // Defaults to current state, but accepts explicit overrides for handlers
+  // that update both state and deck in the same tick.
+  const buildFullDeck = (perks = checkedBoxes, mods = sceneMod) => {
+    const deck = buildClassDeck(name, perks);
+    const extra = [];
+    for (let i = 0; i < mods[0]; i++) extra.push(cardsById[1]); // Bless
+    for (let i = 0; i < mods[1]; i++) extra.push(cardsById[2]); // Curse
+    for (let i = 0; i < mods[2]; i++) extra.push(cardsById[5]); // -1
+    return [...deck, ...extra];
+  };
+
+  // Count cards by ID in the full deck (ignores drawn/discard)
   const countModDeck = () => {
-    const source = buildClassDeck(name, checkedBoxes);
+    const source = buildFullDeck();
     const counts = source.reduce((acc, card) => {
       acc[card.ID] = (acc[card.ID] || 0) + 1;
       return acc;
@@ -63,23 +79,39 @@ function DeckFlip() {
       const next = prev.includes(boxId)
         ? prev.filter((b) => b !== boxId)
         : [...prev, boxId];
-      setModDeck(buildClassDeck(name, next));
+      setModDeck(buildFullDeck(next, sceneMod));
       resetDrawPiles();
       return next;
     });
   };
 
-  // Reset Deck: keep perks, restore deck from current checked set
+  // Reset Deck: remove scene mods, keep perks
   const resetDeck = () => {
-    setModDeck(buildClassDeck(name, checkedBoxes));
+    const clearedMods = [0, 0, 0];
+    setSceneMod(clearedMods);
+    setModDeck(buildFullDeck(checkedBoxes, clearedMods));
     resetDrawPiles();
   };
 
-  // Reset Perks: clear all boxes, rebuild base deck, reset piles
+  // Reshuffle: keep perks AND scene mods, just return drawn cards to the deck
+  const reshuffleDeck = () => {
+    setModDeck(buildFullDeck(checkedBoxes, sceneMod));
+    resetDrawPiles();
+  };
+
+  // Reset Perks: clear all boxes, keep scene mods
   const resetPerks = () => {
     setCheckedBoxes([]);
-    setModDeck(buildClassDeck(name, []));
+    setModDeck(buildFullDeck([], sceneMod));
     resetDrawPiles();
+  };
+
+  // Add one scene modifier at the given index (0=Bless, 1=Curse, 2=-1)
+  const addSceneMod = (index) => {
+    const next = [...sceneMod];
+    next[index] += 1;
+    setSceneMod(next);
+    setModDeck(buildFullDeck(checkedBoxes, next));
   };
 
   // Draw `count` cards, reshuffling discard into deck if needed
@@ -166,7 +198,37 @@ function DeckFlip() {
     const second = result.cards[0];
     const a = first.Value;
     const b = second.Value;
-    const winner = mode === "advantage" ? (b > a ? 1 : 0) : b < a ? 1 : 0;
+
+    let winner;
+    if (mode === "advantage") {
+      if (b > a) {
+        winner = 1;
+      } else if (a === b) {
+        if (!second.Effect) {
+          winner = 0;
+        } else if (!first.Effect) {
+          winner = 1;
+        } else {
+          winner = 0;
+        }
+      } else {
+        winner = 0;
+      }
+    } else {
+      if (b > a) {
+        winner = 0;
+      } else if (a === b) {
+        if (!first.Effect) {
+          winner = 0;
+        } else if (!second.Effect) {
+          winner = 1;
+        } else {
+          winner = 0;
+        }
+      } else {
+        winner = 1;
+      }
+    }
 
     setRollStack(rolls);
     setDrawnCards([first, second]);
@@ -216,6 +278,51 @@ function DeckFlip() {
             <button onClick={resetDeck} style={{ width: "10vw" }}>
               Reset Deck
             </button>
+            <button
+              onClick={reshuffleDeck}
+              style={{ width: "10vw", marginLeft: "8px" }}
+            >
+              Reshuffle
+            </button>
+
+            <table style={{ margin: "0 auto" }}>
+              <thead>
+                <tr>
+                  <th>
+                    <button
+                      onClick={() => addSceneMod(0)}
+                      style={{ width: "8vw", margin: "5px" }}
+                    >
+                      Add Bless
+                    </button>
+                  </th>
+                  <th>
+                    <button
+                      onClick={() => addSceneMod(1)}
+                      style={{ width: "8vw", margin: "5px" }}
+                    >
+                      Add Curse
+                    </button>
+                  </th>
+                  <th>
+                    <button
+                      onClick={() => addSceneMod(2)}
+                      style={{ width: "8vw", margin: "5px" }}
+                    >
+                      Add -1
+                    </button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style={{ textAlign: "center" }}>{sceneMod[0]}</td>
+                  <td style={{ textAlign: "center" }}>{sceneMod[1]}</td>
+                  <td style={{ textAlign: "center" }}>{sceneMod[2]}</td>
+                </tr>
+              </tbody>
+            </table>
+
             <br />
             <div className="draw-area">
               <button className="draw-btn" onClick={handleAdvantage}>
