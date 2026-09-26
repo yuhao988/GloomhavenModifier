@@ -189,12 +189,255 @@
     "Effect": "Generate Fire"
   },
   {
-    "ID":21,
+    "ID": 21,
     "Name": "TinkerRoMud",
     "Class": "Tinkerer",
     "Value": 0,
     "Pierce": 0,
     "Roll": true,
     "Effect": "Muddle"
+  },
+  {
+    "ID": 22,
+    "Name": "ScounRoMud",
+    "Class": "Scoundrel",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Muddle"
+  },
+  {
+    "ID": 23,
+    "Name": "ScounRoInv",
+    "Class": "Scoundrel",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Invisible"
+  },
+  {
+    "ID": 24,
+    "Name": "ScounRoP1",
+    "Class": "Scoundrel",
+    "Value": 1,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": null
+  },
+  {
+    "ID": 25,
+    "Name": "ScounRoPie3",
+    "Class": "Scoundrel",
+    "Value": 0,
+    "Pierce": 3,
+    "Roll": true,
+    "Effect": "Pierce 3"
+  },
+  {
+    "ID": 26,
+    "Name": "ScounRoPoi",
+    "Class": "Scoundrel",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Poison"
+  },
+  {
+    "ID": 27,
+    "Name": "SpellP1Cur",
+    "Class": "Spellweaver",
+    "Value": 1,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Curse"
+  },
+  {
+    "ID": 28,
+    "Name": "SpellP1Imo",
+    "Class": "Spellweaver",
+    "Value": 1,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Immobilise"
+  },
+  {
+    "ID": 29,
+    "Name": "SpellP1Wou",
+    "Class": "Spellweaver",
+    "Value": 1,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Wound"
+  },
+  {
+    "ID": 30,
+    "Name": "SpellP2Fir",
+    "Class": "Spellweaver",
+    "Value": 2,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Generate Fire"
+  },
+  {
+    "ID": 31,
+    "Name": "SpellP2Ice",
+    "Class": "Spellweaver",
+    "Value": 2,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Generate Ice"
+  },
+  {
+    "ID": 32,
+    "Name": "SpellRoAir",
+    "Class": "Spellweaver",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Generate Air"
+  },
+  {
+    "ID": 33,
+    "Name": "SpellRoDrk",
+    "Class": "Spellweaver",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Generate Dark"
+  },
+  {
+    "ID": 34,
+    "Name": "SpellRoErt",
+    "Class": "Spellweaver",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Generate Earth"
+  },
+  {
+    "ID": 35,
+    "Name": "SpellRoLit",
+    "Class": "Spellweaver",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Generate Light"
+  },
+  {
+    "ID": 36,
+    "Name": "SpellStu",
+    "Class": "Spellweaver",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Stun"
+  },
+  {
+    "ID": 37,
+    "Name": "CragP1Imo",
+    "Class": "Cragheart",
+    "Value": 1,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Immobilise"
+  },
+  {
+    "ID": 38,
+    "Name": "CragP2Mud",
+    "Class": "Cragheart",
+    "Value": 2,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Muddle"
+  },
+  {
+    "ID": 39,
+    "Name": "CragRoAir",
+    "Class": "Cragheart",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Generate Air"
+  },
+  {
+    "ID": 40,
+    "Name": "CragRoErt",
+    "Class": "Cragheart",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Generate Earth"
+  },
+  {
+    "ID": 41,
+    "Name": "CragRoPus2",
+    "Class": "Cragheart",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Push 2"
+  },
+  {
+    "ID": 42,
+    "Name": "MindP2Ice",
+    "Class": "Mindthief",
+    "Value": 2,
+    "Pierce": 0,
+    "Roll": false,
+    "Effect": "Generate Ice"
+  },
+  {
+    "ID": 43,
+    "Name": "MindRoDis",
+    "Class": "Mindthief",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Disarm"
+  },
+  {
+    "ID": 44,
+    "Name": "MindRoImo",
+    "Class": "Mindthief",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Immobilise"
+  },
+  {
+    "ID": 45,
+    "Name": "MindRoMud",
+    "Class": "Mindthief",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Muddle"
+  },
+  {
+    "ID": 46,
+    "Name": "MindRoP1",
+    "Class": "Mindthief",
+    "Value": 1,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect":null
+  },
+  {
+    "ID": 47,
+    "Name": "MindRoPul1",
+    "Class": "Mindthief",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Pull 1"
+  },
+  {
+    "ID": 48,
+    "Name": "MindRoStu",
+    "Class": "Mindthief",
+    "Value": 0,
+    "Pierce": 0,
+    "Roll": true,
+    "Effect": "Stun"
   }
 ]

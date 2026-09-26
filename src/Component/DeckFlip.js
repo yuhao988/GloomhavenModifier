@@ -4,6 +4,7 @@ import "./DeckFlip.css";
 import cardBack from "./CardImages/Cardback.png";
 import cardData from "./CardList.json";
 import { buildClassDeck, PerkTable } from "./PerkTable";
+import { Simulation10K } from "./Simulation10K";
 
 const imageContext = require.context("../Class", false, /\.(jpg)$/);
 const cardImageContext = require.context("./CardImages", true, /\.(png)$/);
@@ -42,6 +43,17 @@ function DeckFlip() {
 
   // Scene mods: [blessCount, curseCount, minus1Count]
   const [sceneMod, setSceneMod] = useState([0, 0, 0]);
+
+  //Simulation Modal states
+  const [isModal, setIsModal] = useState(false);
+
+  const openModal = () => {
+    setIsModal(true);
+  };
+
+  const closeModal = () => {
+    setIsModal(false);
+  };
 
   // Build the full deck: base + perks + scene mods.
   // Defaults to current state, but accepts explicit overrides for handlers
@@ -109,9 +121,11 @@ function DeckFlip() {
   // Add one scene modifier at the given index (0=Bless, 1=Curse, 2=-1)
   const addSceneMod = (index) => {
     const next = [...sceneMod];
-    next[index] += 1;
-    setSceneMod(next);
-    setModDeck(buildFullDeck(checkedBoxes, next));
+    if (next[index] < 10) {
+      next[index] += 1;
+      setSceneMod(next);
+      setModDeck(buildFullDeck(checkedBoxes, next));
+    }
   };
 
   // Draw `count` cards, reshuffling discard into deck if needed
@@ -372,6 +386,7 @@ function DeckFlip() {
                 ))}
               </div>
             )}
+            <button onClick={() => openModal()}>Simulation</button>
           </div>
 
           <div className="body-column3">
@@ -395,7 +410,7 @@ function DeckFlip() {
             </table>
           </div>
         </div>
-
+        <Simulation10K isOpen={isModal} onClose={closeModal} importDeck={modDeck}/>
         <Link to={`${process.env.PUBLIC_URL}/`} className="home-link">
           Back
         </Link>
